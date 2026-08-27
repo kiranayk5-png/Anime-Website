@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Animexia</title>
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>🌸 Animexia 🌸</header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Popular</a>
+        <a href="#">Genres</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <section class="hero">
+        <h1>Welcome to Your Anime World</h1>
+        <p>Click any anime to watch trailer</p>
+    </section>
+
+    <section class="cards">
+
+        <div class="card" onclick="openVideo('MGRm4IzK1SQ')">
+            <img src="https://i.pinimg.com/736x/67/b6/90/67b690140f09b858dd942c7a35e434e2.jpg">
+            <h3>Attack Titan</h3>
+        </div>
+
+        <div class="card" onclick="openVideo('VQGCKyvzIM4')">
+            <img src="https://i.pinimg.com/736x/39/9b/83/399b83aa72375e3e8aad65b57656f646.jpg">
+            <h3>Demon Slayer</h3>
+        </div>
+
+        <div class="card" onclick="openVideo('pkKu9hLT-t8')">
+            <img src="https://i.pinimg.com/736x/df/58/16/df58161f64865fe8232e1b54259b653a.jpg">
+            <h3>Jujutsu Kaisen</h3>
+        </div>
+
+        <div class="card" onclick="openVideo('yw78YldkK28')">
+            <img src="https://i.pinimg.com/736x/0e/6d/6c/0e6d6cbd5910a6f358d3db4e0e7e41ff.jpg">
+            <h3>Bleach</h3>
+        </div>
+
+        <div class="card" onclick="openVideo('hwkAbAKOfxk')">
+            <img src="https://i.pinimg.com/736x/83/5f/f9/835ff9e34826c4ada4d36f0e0e3235f3.jpg">
+            <h3>Black Clover</h3>
+        </div>
+
+        <div class="card" onclick="openVideo('eqy85AL70PU')">
+            <img src="https://i.pinimg.com/1200x/c6/db/1c/c6db1ce4ee68d9eeb1e5787077f50cec.jpg">
+            <h3>Solo Leveling</h3>
+        </div>
+
+    </section>
+
+    
+    <div class="modal" id="videoModal">
+
+        <span class="close" onclick="closeVideo()">✖</span>
+
+        <iframe
+            id="videoFrame"
+            src=""
+            frameborder="0"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Animexia 🚀</p>
+    </footer>
+
+    
+    <script src="script.js"></script>
+
+</body>
+</html>
