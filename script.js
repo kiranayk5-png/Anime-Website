@@ -1,6 +1,5 @@
-```javascript
 /* =========================================
-   NAVIGATION MENU
+   MOBILE MENU
 ========================================= */
 
 function toggleMenu() {
@@ -8,28 +7,67 @@ function toggleMenu() {
     const navbar =
         document.getElementById("navbar");
 
+    const menuButton =
+        document.querySelector(".menu-btn");
+
+
     navbar.classList.toggle("show");
+
+
+    if (navbar.classList.contains("show")) {
+
+        menuButton.innerHTML = "✕";
+
+    } else {
+
+        menuButton.innerHTML = "☰";
+
+    }
+
 }
 
 
 /* =========================================
-   SMOOTH SCROLL
+   CLOSE MOBILE MENU
 ========================================= */
 
-function scrollToSection(sectionId) {
+function closeMobileMenu() {
 
-    const section =
-        document.getElementById(sectionId);
+    const navbar =
+        document.getElementById("navbar");
 
-    section.scrollIntoView({
-        behavior: "smooth"
-    });
+    const menuButton =
+        document.querySelector(".menu-btn");
+
+
+    navbar.classList.remove("show");
+
+    menuButton.innerHTML = "☰";
 
 }
 
 
 /* =========================================
-   ANIME TRAILER
+   NAVIGATION LINKS
+========================================= */
+
+const navLinks =
+    document.querySelectorAll(".nav-link");
+
+
+navLinks.forEach(function(link) {
+
+    link.addEventListener("click", function() {
+
+        closeMobileMenu();
+
+    });
+
+});
+
+
+/* =========================================
+   VIDEO PLAYER
 ========================================= */
 
 function openVideo(id) {
@@ -37,15 +75,21 @@ function openVideo(id) {
     const modal =
         document.getElementById("videoModal");
 
-    const videoFrame =
+    const frame =
         document.getElementById("videoFrame");
+
 
     modal.style.display = "flex";
 
-    videoFrame.src =
+
+    document.body.style.overflow = "hidden";
+
+
+    frame.src =
         "https://www.youtube.com/embed/"
         + id
-        + "?autoplay=1";
+        + "?autoplay=1&rel=0";
+
 }
 
 
@@ -58,18 +102,23 @@ function closeVideo() {
     const modal =
         document.getElementById("videoModal");
 
-    const videoFrame =
+    const frame =
         document.getElementById("videoFrame");
+
 
     modal.style.display = "none";
 
-    // Stop video
-    videoFrame.src = "";
+
+    frame.src = "";
+
+
+    document.body.style.overflow = "";
+
 }
 
 
 /* =========================================
-   CLOSE MODAL WHEN CLICKING OUTSIDE
+   CLICK OUTSIDE VIDEO
 ========================================= */
 
 window.addEventListener("click", function(event) {
@@ -77,9 +126,27 @@ window.addEventListener("click", function(event) {
     const modal =
         document.getElementById("videoModal");
 
+
     if (event.target === modal) {
 
         closeVideo();
+
+    }
+
+});
+
+
+/* =========================================
+   ESC KEY
+========================================= */
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+
+        closeVideo();
+
+        closeMobileMenu();
 
     }
 
@@ -92,10 +159,12 @@ window.addEventListener("click", function(event) {
 
 function searchAnime() {
 
-    const input =
-        document
-        .getElementById("searchInput")
-        .value
+    const searchInput =
+        document.getElementById("searchInput");
+
+
+    const searchText =
+        searchInput.value
         .toLowerCase()
         .trim();
 
@@ -104,26 +173,30 @@ function searchAnime() {
         document.querySelectorAll(".card");
 
 
+    const noResults =
+        document.getElementById("noResults");
+
+
     let found = 0;
 
 
     cards.forEach(function(card) {
 
-        const name =
+        const animeName =
             card
             .getAttribute("data-name")
             .toLowerCase();
 
 
-        if (name.includes(input)) {
+        if (
+            animeName.includes(searchText)
+        ) {
 
-            card.style.display = "block";
+            card.style.display = "";
 
             found++;
 
-        }
-
-        else {
+        } else {
 
             card.style.display = "none";
 
@@ -132,17 +205,11 @@ function searchAnime() {
     });
 
 
-    const noResults =
-        document.getElementById("noResults");
-
-
     if (found === 0) {
 
         noResults.style.display = "block";
 
-    }
-
-    else {
+    } else {
 
         noResults.style.display = "none";
 
@@ -152,7 +219,7 @@ function searchAnime() {
 
 
 /* =========================================
-   GENRE FILTER
+   FILTER BY GENRE
 ========================================= */
 
 function filterGenre(genre) {
@@ -161,26 +228,36 @@ function filterGenre(genre) {
         document.querySelectorAll(".card");
 
 
+    const noResults =
+        document.getElementById("noResults");
+
+
+    const searchInput =
+        document.getElementById("searchInput");
+
+
     let found = 0;
 
 
     cards.forEach(function(card) {
 
-        const genres =
+        const cardGenres =
             card
             .getAttribute("data-genre")
             .toLowerCase();
 
 
-        if (genres.includes(genre)) {
+        if (
+            cardGenres.includes(
+                genre.toLowerCase()
+            )
+        ) {
 
-            card.style.display = "block";
+            card.style.display = "";
 
             found++;
 
-        }
-
-        else {
+        } else {
 
             card.style.display = "none";
 
@@ -189,32 +266,70 @@ function filterGenre(genre) {
     });
 
 
-    const noResults =
-        document.getElementById("noResults");
+    searchInput.value = "";
 
 
     if (found === 0) {
 
-        noResults.innerText =
-            "😢 No anime available for this genre yet.";
+        noResults.innerHTML =
+            "😢 No anime found in this genre.";
 
         noResults.style.display = "block";
 
-    }
-
-    else {
+    } else {
 
         noResults.style.display = "none";
 
     }
 
 
-    // Go to Popular section
-    scrollToSection("popular");
+    /* Go to Popular Anime */
+
+    document
+        .getElementById("popular")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
 
 
-    // Clear search
-    document.getElementById("searchInput").value = "";
+/* =========================================
+   SHOW ALL ANIME
+========================================= */
+
+function showAllAnime() {
+
+    const cards =
+        document.querySelectorAll(".card");
+
+
+    const noResults =
+        document.getElementById("noResults");
+
+
+    const searchInput =
+        document.getElementById("searchInput");
+
+
+    cards.forEach(function(card) {
+
+        card.style.display = "";
+
+    });
+
+
+    searchInput.value = "";
+
+
+    noResults.style.display = "none";
+
+
+    document
+        .getElementById("popular")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
 
 }
 
@@ -229,20 +344,56 @@ function sendMessage(event) {
 
 
     const name =
-        document.getElementById("name").value;
+        document
+        .getElementById("name")
+        .value
+        .trim();
 
 
-    const successMessage =
-        document.getElementById("successMessage");
+    const email =
+        document
+        .getElementById("email")
+        .value
+        .trim();
 
 
-    successMessage.innerText =
+    const message =
+        document
+        .getElementById("message")
+        .value
+        .trim();
+
+
+    const success =
+        document
+        .getElementById("successMessage");
+
+
+    if (
+        name === "" ||
+        email === "" ||
+        message === ""
+    ) {
+
+        success.innerHTML =
+            "⚠️ Please fill all fields.";
+
+        success.style.color = "#ff8b8b";
+
+        return;
+
+    }
+
+
+    success.innerHTML =
         "✨ Thank you "
         + name
         + "! Your message has been received 💖";
 
 
-    // Clear form
+    success.style.color = "#8effc5";
+
+
     document
         .querySelector("#contact form")
         .reset();
@@ -251,77 +402,79 @@ function sendMessage(event) {
 
 
 /* =========================================
-   NAVIGATION ACTIVE STATE
+   ACTIVE NAVIGATION WHILE SCROLLING
 ========================================= */
 
 const sections =
     document.querySelectorAll("section");
 
-const navLinks =
-    document.querySelectorAll(".nav-link");
+
+window.addEventListener(
+    "scroll",
+    function() {
+
+        let current = "";
 
 
-window.addEventListener("scroll", function() {
+        sections.forEach(function(section) {
 
-    let current = "";
-
-
-    sections.forEach(function(section) {
-
-        const sectionTop =
-            section.offsetTop - 120;
-
-        const sectionHeight =
-            section.clientHeight;
+            const sectionTop =
+                section.offsetTop - 120;
 
 
-        if (
-            window.scrollY >= sectionTop &&
-            window.scrollY < sectionTop + sectionHeight
-        ) {
-
-            current =
-                section.getAttribute("id");
-
-        }
-
-    });
+            const sectionHeight =
+                section.offsetHeight;
 
 
-    navLinks.forEach(function(link) {
+            if (
+                window.scrollY >= sectionTop &&
+                window.scrollY <
+                sectionTop + sectionHeight
+            ) {
 
-        link.classList.remove("active");
+                current =
+                    section.getAttribute("id");
 
-
-        if (
-            link.getAttribute("href") ===
-            "#" + current
-        ) {
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-});
-
-
-/* =========================================
-   CLOSE MOBILE MENU
-========================================= */
-
-document
-    .querySelectorAll(".nav-link")
-    .forEach(function(link) {
-
-        link.addEventListener("click", function() {
-
-            document
-                .getElementById("navbar")
-                .classList.remove("show");
+            }
 
         });
 
-    });
-```
+
+        navLinks.forEach(function(link) {
+
+            link.classList.remove("active");
+
+
+            if (
+                link.getAttribute("href") ===
+                "#" + current
+            ) {
+
+                link.classList.add("active");
+
+            }
+
+        });
+
+    }
+);
+
+
+/* =========================================
+   CLOSE MENU WHEN RESIZING
+========================================= */
+
+window.addEventListener(
+    "resize",
+    function() {
+
+        if (window.innerWidth > 700) {
+
+            closeMobileMenu();
+
+            document.body.style.overflow = "";
+
+        }
+
+    }
+);
