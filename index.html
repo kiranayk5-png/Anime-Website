@@ -1,933 +1,1076 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#100d2e">
 
     <title>Animexia | Anime World</title>
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
-
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
 
-    <!-- =========================
-         NAVIGATION
-    ========================== -->
+<!-- =========================================
+     HEADER
+========================================= -->
 
-    <header>
+<header>
 
-        <div class="logo">
-            🌸 <span>Anime</span>xia
+    <div class="logo">
+        🌸 <span>Anime</span>xia
+    </div>
+
+    <button class="menu-btn"
+            onclick="toggleMenu()"
+            aria-label="Open Menu">
+        ☰
+    </button>
+
+    <nav id="navbar">
+
+        <a href="#home" class="nav-link active">
+            🏠 Home
+        </a>
+
+        <a href="#popular" class="nav-link">
+            🔥 Popular
+        </a>
+
+        <a href="#genres" class="nav-link">
+            🎭 Genres
+        </a>
+
+        <a href="#contact" class="nav-link">
+            💌 Contact
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================================
+     HOME / HERO
+========================================= -->
+
+<section id="home" class="hero">
+
+    <div class="hero-glow glow-one"></div>
+    <div class="hero-glow glow-two"></div>
+
+    <div class="hero-content">
+
+        <div class="hero-badge">
+            ✨ WELCOME TO THE ANIME UNIVERSE ✨
         </div>
 
-        <nav id="navbar">
-
-            <a href="#home" class="nav-link active">
-                Home
-            </a>
-
-            <a href="#popular" class="nav-link">
-                Popular
-            </a>
-
-            <a href="#genres" class="nav-link">
-                Genres
-            </a>
-
-            <a href="#contact" class="nav-link">
-                Contact
-            </a>
-
-        </nav>
-
-        <button class="menu-btn" onclick="toggleMenu()">
-            ☰
-        </button>
-
-    </header>
-
-
-    <!-- =========================
-         HOME SECTION
-    ========================== -->
-
-    <section id="home" class="hero">
-
-        <div class="hero-content">
-
-            <div class="hero-badge">
-                ✨ YOUR ULTIMATE ANIME DESTINATION
-            </div>
-
-            <h1>
-                Welcome to Your
-                <span>Anime World</span>
-            </h1>
-
-            <p>
-                Discover legendary characters, epic battles,
-                unforgettable stories and your next favorite anime.
-            </p>
-
-            <div class="hero-buttons">
-
-                <button
-                    class="primary-btn"
-                    onclick="scrollToSection('popular')"
-                >
-                    Explore Anime 🚀
-                </button>
-
-                <button
-                    class="secondary-btn"
-                    onclick="scrollToSection('genres')"
-                >
-                    Browse Genres
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <div class="hero-decoration">
-
-            <div class="circle circle-one"></div>
-            <div class="circle circle-two"></div>
-            <div class="circle circle-three"></div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         POPULAR SECTION
-    ========================== -->
-
-    <section id="popular" class="popular-section">
-
-        <div class="section-heading">
-
-            <span>DISCOVER</span>
-
-            <h2>
-                🔥 Popular Anime
-            </h2>
-
-            <p>
-                Explore some of the most popular anime trailer.
-            </p>
-
-        </div>
-
-
-        
-
-        
-
-
-        <!-- ANIME CARDS -->
-
-        <div class="cards" id="animeCards">
-
-
-            <!-- ATTACK ON TITAN -->
-
-            <div
-                class="card"
-                data-name="Attack on Titan"
-                data-genre="action fantasy"
-                onclick="openVideo('MGRm4IzK1SQ')"
-            >
-
-                <div class="card-image">
-
-                    <img
-                        src="https://i.pinimg.com/736x/67/b6/90/67b690140f09b858dd942c7a35e434e2.jpg"
-                        alt="Attack on Titan"
-                    >
-
-                    <div class="play-overlay">
-                        ▶
-                    </div>
-
-                </div>
-
-                <div class="card-content">
-
-                    <span class="card-tag">
-                        ACTION
-                    </span>
-
-                    <h3>
-                        Attack on Titan
-                    </h3>
-
-                    <p>
-                        ⚔️ Action • 🌑 Dark Fantasy
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- DEMON SLAYER -->
-
-            <div
-                class="card"
-                data-name="Demon Slayer"
-                data-genre="action fantasy"
-                onclick="openVideo('VQGCKyvzIM4')"
-            >
-
-                <div class="card-image">
-
-                    <img
-                        src="https://i.pinimg.com/736x/39/9b/83/399b83aa72375e3e8aad65b57656f646.jpg"
-                        alt="Demon Slayer"
-                    >
-
-                    <div class="play-overlay">
-                        ▶
-                    </div>
-
-                </div>
-
-                <div class="card-content">
-
-                    <span class="card-tag">
-                        ACTION
-                    </span>
-
-                    <h3>
-                        Demon Slayer
-                    </h3>
-
-                    <p>
-                        ⚔️ Action • 🧙 Fantasy
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- JUJUTSU KAISEN -->
-
-            <div
-                class="card"
-                data-name="Jujutsu Kaisen"
-                data-genre="action horror"
-                onclick="openVideo('pkKu9hLT-t8')"
-            >
-
-                <div class="card-image">
-
-                    <img
-                        src="https://i.pinimg.com/736x/df/58/16/df58161f64865fe8232e1b54259b653a.jpg"
-                        alt="Jujutsu Kaisen"
-                    >
-
-                    <div class="play-overlay">
-                        ▶
-                    </div>
-
-                </div>
-
-                <div class="card-content">
-
-                    <span class="card-tag">
-                        ACTION
-                    </span>
-
-                    <h3>
-                        Jujutsu Kaisen
-                    </h3>
-
-                    <p>
-                        ⚔️ Action • 👻 Supernatural
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- BLEACH -->
-
-            <div
-                class="card"
-                data-name="Bleach"
-                data-genre="action fantasy"
-                onclick="openVideo('yw78YldkK28')"
-            >
-
-                <div class="card-image">
-
-                    <img
-                        src="https://i.pinimg.com/736x/0e/6d/6c/0e6d6cbd5910a6f358d3db4e0e7e41ff.jpg"
-                        alt="Bleach"
-                    >
-
-                    <div class="play-overlay">
-                        ▶
-                    </div>
-
-                </div>
-
-                <div class="card-content">
-
-                    <span class="card-tag">
-                        ACTION
-                    </span>
-
-                    <h3>
-                        Bleach
-                    </h3>
-
-                    <p>
-                        ⚔️ Action • 🌌 Adventure
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- BLACK CLOVER -->
-
-            <div
-                class="card"
-                data-name="Black Clover"
-                data-genre="fantasy action"
-                onclick="openVideo('hwkAbAKOfxk')"
-            >
-
-                <div class="card-image">
-
-                    <img
-                        src="https://i.pinimg.com/736x/83/5f/f9/835ff9e34826c4ada4d36f0e0e3235f3.jpg"
-                        alt="Black Clover"
-                    >
-
-                    <div class="play-overlay">
-                        ▶
-                    </div>
-
-                </div>
-
-                <div class="card-content">
-
-                    <span class="card-tag">
-                        FANTASY
-                    </span>
-
-                    <h3>
-                        Black Clover
-                    </h3>
-
-                    <p>
-                        🧙 Fantasy • ⚔️ Action
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- SOLO LEVELING -->
-
-            <div
-                class="card"
-                data-name="Solo Leveling"
-                data-genre="action fantasy"
-                onclick="openVideo('eqy85AL70PU')"
-            >
-
-                <div class="card-image">
-
-                    <img
-                        src="https://i.pinimg.com/1200x/c6/db/1c/c6db1ce4ee68d9eeb1e5787077f50cec.jpg"
-                        alt="Solo Leveling"
-                    >
-
-                    <div class="play-overlay">
-                        ▶
-                    </div>
-
-                </div>
-
-                <div class="card-content">
-
-                    <span class="card-tag">
-                        TRENDING
-                    </span>
-
-                    <h3>
-                        Solo Leveling
-                    </h3>
-
-                    <p>
-                        ⚔️ Action • 🧙 Fantasy
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <p
-            id="noResults"
-            class="no-results"
-        >
-            😢 No anime found.
+        <h1>
+            Your Ultimate
+            <span>Anime World</span>
+        </h1>
+
+        <p>
+            Discover legendary characters, epic battles,
+            unforgettable stories and your next favorite anime.
         </p>
 
-    </section>
+        <div class="hero-buttons">
 
+            <a href="#popular"
+               class="primary-btn">
+                Explore Anime 🚀
+            </a>
 
-    <!-- =========================
-         GENRES SECTION
-    ========================== -->
-
-    <section id="genres" class="genres-section">
-
-        <div class="section-heading">
-
-            <span>EXPLORE</span>
-
-            <h2>
-                🎭 Anime Genres
-            </h2>
-
-            <p>
-                Choose your favorite genre and discover amazing anime.
-            </p>
+            <a href="#genres"
+               class="secondary-btn">
+                Browse Genres 🎭
+            </a>
 
         </div>
 
+        <div class="hero-stats">
 
-        <div class="genre-grid">
-
-
-            <div
-                class="genre-card"
-                onclick="filterGenre('action')"
-            >
-
-                <div class="genre-icon">
-                    ⚔️
-                </div>
-
-                <div class="genre-info">
-
-                    <h3>
-                        Action
-                    </h3>
-
-                    <p>
-                        Epic battles & powerful heroes
-                    </p>
-
-                </div>
-
-                <span class="genre-arrow">
-                    →
-                </span>
-
+            <div>
+                <strong>10+</strong>
+                <span>Anime</span>
             </div>
 
-
-            <div
-                class="genre-card"
-                onclick="filterGenre('comedy')"
-            >
-
-                <div class="genre-icon">
-                    😂
-                </div>
-
-                <div class="genre-info">
-
-                    <h3>
-                        Comedy
-                    </h3>
-
-                    <p>
-                        Laughs & unforgettable moments
-                    </p>
-
-                </div>
-
-                <span class="genre-arrow">
-                    →
-                </span>
-
+            <div>
+                <strong>8</strong>
+                <span>Genres</span>
             </div>
 
-
-            <div
-                class="genre-card"
-                onclick="filterGenre('romance')"
-            >
-
-                <div class="genre-icon">
-                    ❤️
-                </div>
-
-                <div class="genre-info">
-
-                    <h3>
-                        Romance
-                    </h3>
-
-                    <p>
-                        Love stories that touch your heart
-                    </p>
-
-                </div>
-
-                <span class="genre-arrow">
-                    →
-                </span>
-
+            <div>
+                <strong>∞</strong>
+                <span>Stories</span>
             </div>
-
-
-            <div
-                class="genre-card"
-                onclick="filterGenre('horror')"
-            >
-
-                <div class="genre-icon">
-                    👻
-                </div>
-
-                <div class="genre-info">
-
-                    <h3>
-                        Horror
-                    </h3>
-
-                    <p>
-                        Dark stories & supernatural mysteries
-                    </p>
-
-                </div>
-
-                <span class="genre-arrow">
-                    →
-                </span>
-
-            </div>
-
-
-            <div
-                class="genre-card"
-                onclick="filterGenre('fantasy')"
-            >
-
-                <div class="genre-icon">
-                    🧙
-                </div>
-
-                <div class="genre-info">
-
-                    <h3>
-                        Fantasy
-                    </h3>
-
-                    <p>
-                        Magic, monsters & amazing worlds
-                    </p>
-
-                </div>
-
-                <span class="genre-arrow">
-                    →
-                </span>
-
-            </div>
-
-
-            <div
-                class="genre-card"
-                onclick="filterGenre('sci-fi')"
-            >
-
-                <div class="genre-icon">
-                    🚀
-                </div>
-
-                <div class="genre-info">
-
-                    <h3>
-                        Sci-Fi
-                    </h3>
-
-                    <p>
-                        Future worlds & advanced technology
-                    </p>
-
-                </div>
-
-                <span class="genre-arrow">
-                    →
-                </span>
-
-            </div>
-
-
-            <div
-                class="genre-card"
-                onclick="filterGenre('school')"
-            >
-
-                <div class="genre-icon">
-                    🏫
-                </div>
-
-                <div class="genre-info">
-
-                    <h3>
-                        School
-                    </h3>
-
-                    <p>
-                        Friendship & school adventures
-                    </p>
-
-                </div>
-
-                <span class="genre-arrow">
-                    →
-                </span>
-
-            </div>
-
-
-            <div
-                class="genre-card"
-                onclick="filterGenre('martial')"
-            >
-
-                <div class="genre-icon">
-                    🥋
-                </div>
-
-                <div class="genre-info">
-
-                    <h3>
-                        Martial Arts
-                    </h3>
-
-                    <p>
-                        Training & legendary fighters
-                    </p>
-
-                </div>
-
-                <span class="genre-arrow">
-                    →
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="genre-message">
-
-            <span>
-                💡
-            </span>
-
-            Click a genre to explore anime!
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         CONTACT SECTION
-    ========================== -->
-
-    <section id="contact" class="contact-section">
-
-        <div class="contact-container">
-
-
-            <!-- CONTACT INFORMATION -->
-
-            <div class="contact-info">
-
-                <span class="contact-tag">
-                    GET IN TOUCH
-                </span>
-
-                <h2>
-                    Let's Talk
-                    <br>
-                    <span>Anime! 🌸</span>
-                </h2>
-
-                <p>
-                    Have an anime suggestion, feedback, or want to
-                    recommend something awesome?
-                    Send us a message!
-                </p>
-
-
-                <div class="contact-details">
-
-
-                    <div class="contact-detail">
-
-                        <div class="detail-icon">
-                            📧
-                        </div>
-
-                        <div>
-
-                            <small>
-                                Email
-                            </small>
-
-                            <p>
-                                animexia@example.com
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="contact-detail">
-
-                        <div class="detail-icon">
-                            💬
-                        </div>
-
-                        <div>
-
-                            <small>
-                                Community
-                            </small>
-
-                            <p>
-                                Anime Lovers Community
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="contact-detail">
-
-                        <div class="detail-icon">
-                            🌸
-                        </div>
-
-                        <div>
-
-                            <small>
-                                Response Time
-                            </small>
-
-                            <p>
-                                Usually within 24 hours
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- CONTACT FORM -->
-
-            <div class="contact-form-card">
-
-                <div class="form-header">
-
-                    <h3>
-                        Send us a message 💌
-                    </h3>
-
-                    <p>
-                        We'd love to hear from you!
-                    </p>
-
-                </div>
-
-
-                <form onsubmit="sendMessage(event)">
-
-
-                    <div class="input-group">
-
-                        <label>
-                            Your Name
-                        </label>
-
-                        <input
-                            type="text"
-                            id="name"
-                            placeholder="Enter your name"
-                            required
-                        >
-
-                    </div>
-
-
-                    <div class="input-group">
-
-                        <label>
-                            Your Email
-                        </label>
-
-                        <input
-                            type="email"
-                            id="email"
-                            placeholder="Enter your email"
-                            required
-                        >
-
-                    </div>
-
-
-                    <div class="input-group">
-
-                        <label>
-                            Your Message
-                        </label>
-
-                        <textarea
-                            id="message"
-                            placeholder="Tell us your favorite anime..."
-                            required
-                        ></textarea>
-
-                    </div>
-
-
-                    <button
-                        type="submit"
-                        class="send-btn"
-                    >
-
-                        Send Message
-
-                        <span>
-                            🚀
-                        </span>
-
-                    </button>
-
-                </form>
-
-
-                <p id="successMessage"></p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         VIDEO MODAL
-    ========================== -->
-
-    <div
-        class="modal"
-        id="videoModal"
-    >
-
-        <button
-            class="close"
-            onclick="closeVideo()"
-        >
-            ✕
-        </button>
-
-
-        <div class="video-container">
-
-            <iframe
-                id="videoFrame"
-                src=""
-                title="Anime Trailer"
-                frameborder="0"
-                allow="autoplay; encrypted-media"
-                allowfullscreen>
-            </iframe>
 
         </div>
 
     </div>
 
+</section>
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
 
-    <footer>
+<!-- =========================================
+     POPULAR ANIME
+========================================= -->
 
-        <div class="footer-logo">
-            🌸 Animexia
-        </div>
+<section id="popular" class="popular-section">
+
+    <div class="section-heading">
+
+        <span>EXPLORE THE COLLECTION</span>
+
+        <h2>
+            🔥 Popular Anime
+        </h2>
 
         <p>
-            Your ultimate destination for anime lovers.
+            Watch trailers and discover amazing anime adventures.
         </p>
 
-        <div class="footer-links">
+    </div>
 
-            <a href="#home">Home</a>
-            <a href="#popular">Popular</a>
-            <a href="#genres">Genres</a>
-            <a href="#contact">Contact</a>
+
+    <!-- SEARCH -->
+
+    <div class="search-container">
+
+        <span>🔍</span>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search anime..."
+            onkeyup="searchAnime()">
+
+    </div>
+
+
+    <!-- NO RESULT -->
+
+    <div id="noResults" class="no-results">
+        😢 No anime found.
+    </div>
+
+
+    <!-- ANIME CARDS -->
+
+    <div class="cards">
+
+
+        <!-- ATTACK ON TITAN -->
+
+        <div class="card"
+             data-name="Attack on Titan"
+             data-genre="action fantasy">
+
+            <div class="card-image">
+
+                <img
+                    src="https://i.pinimg.com/736x/67/b6/90/67b690140f09b858dd942c7a35e434e2.jpg"
+                    alt="Attack on Titan">
+
+                <div class="play-overlay"
+                     onclick="openVideo('MGRm4IzK1SQ')">
+
+                    <div class="play-button">
+                        ▶
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="card-content">
+
+                <span class="anime-number">
+                    #01
+                </span>
+
+                <h3>
+                    Attack on Titan
+                </h3>
+
+                <p>
+                    ⚔️ Action • 🌌 Fantasy
+                </p>
+
+            </div>
 
         </div>
 
-        <div class="footer-line"></div>
 
-        <p class="copyright">
-            © 2026 Animexia 🚀 | Made with ❤️ for Anime Lovers
+        <!-- DEMON SLAYER -->
+
+        <div class="card"
+             data-name="Demon Slayer"
+             data-genre="action fantasy">
+
+            <div class="card-image">
+
+                <img
+                    src="https://i.pinimg.com/736x/39/9b/83/399b83aa72375e3e8aad65b57656f646.jpg"
+                    alt="Demon Slayer">
+
+                <div class="play-overlay"
+                     onclick="openVideo('VQGCKyvzIM4')">
+
+                    <div class="play-button">
+                        ▶
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="card-content">
+
+                <span class="anime-number">
+                    #02
+                </span>
+
+                <h3>
+                    Demon Slayer
+                </h3>
+
+                <p>
+                    ⚔️ Action • 👹 Fantasy
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- JUJUTSU KAISEN -->
+
+        <div class="card"
+             data-name="Jujutsu Kaisen"
+             data-genre="action fantasy">
+
+            <div class="card-image">
+
+                <img
+                    src="https://i.pinimg.com/736x/df/58/16/df58161f64865fe8232e1b54259b653a.jpg"
+                    alt="Jujutsu Kaisen">
+
+                <div class="play-overlay"
+                     onclick="openVideo('pkKu9hLT-t8')">
+
+                    <div class="play-button">
+                        ▶
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="card-content">
+
+                <span class="anime-number">
+                    #03
+                </span>
+
+                <h3>
+                    Jujutsu Kaisen
+                </h3>
+
+                <p>
+                    👻 Action • ⚡ Supernatural
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- BLEACH -->
+
+        <div class="card"
+             data-name="Bleach"
+             data-genre="action martial">
+
+            <div class="card-image">
+
+                <img
+                    src="https://i.pinimg.com/736x/0e/6d/6c/0e6d6cbd5910a6f358d3db4e0e7e41ff.jpg"
+                    alt="Bleach">
+
+                <div class="play-overlay"
+                     onclick="openVideo('yw78YldkK28')">
+
+                    <div class="play-button">
+                        ▶
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="card-content">
+
+                <span class="anime-number">
+                    #04
+                </span>
+
+                <h3>
+                    Bleach
+                </h3>
+
+                <p>
+                    ⚔️ Action • 👻 Supernatural
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- BLACK CLOVER -->
+
+        <div class="card"
+             data-name="Black Clover"
+             data-genre="action fantasy">
+
+            <div class="card-image">
+
+                <img
+                    src="https://i.pinimg.com/736x/83/5f/f9/835ff9e34826c4ada4d36f0e0e3235f3.jpg"
+                    alt="Black Clover">
+
+                <div class="play-overlay"
+                     onclick="openVideo('hwkAbAKOfxk')">
+
+                    <div class="play-button">
+                        ▶
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="card-content">
+
+                <span class="anime-number">
+                    #05
+                </span>
+
+                <h3>
+                    Black Clover
+                </h3>
+
+                <p>
+                    🪄 Fantasy • ⚔️ Action
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SOLO LEVELING -->
+
+        <div class="card"
+             data-name="Solo Leveling"
+             data-genre="action fantasy">
+
+            <div class="card-image">
+
+                <img
+                    src="https://i.pinimg.com/1200x/c6/db/1c/c6db1ce4ee68d9eeb1e5787077f50cec.jpg"
+                    alt="Solo Leveling">
+
+                <div class="play-overlay"
+                     onclick="openVideo('eqy85AL70PU')">
+
+                    <div class="play-button">
+                        ▶
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="card-content">
+
+                <span class="anime-number">
+                    #06
+                </span>
+
+                <h3>
+                    Solo Leveling
+                </h3>
+
+                <p>
+                    ⚔️ Action • 🌌 Fantasy
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ONE PIECE -->
+
+        <div class="card"
+             data-name="One Piece"
+             data-genre="action comedy fantasy">
+
+            <div class="card-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1607604276583-eef5f6a0f5e8?auto=format&fit=crop&w=600&q=80"
+                    alt="One Piece">
+
+                <div class="play-overlay"
+                     onclick="openVideo('MCb13lbVGE0')">
+
+                    <div class="play-button">
+                        ▶
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="card-content">
+
+                <span class="anime-number">
+                    #07
+                </span>
+
+                <h3>
+                    One Piece
+                </h3>
+
+                <p>
+                    🏴‍☠️ Adventure • 😂 Comedy
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- NARUTO -->
+
+        <div class="card"
+             data-name="Naruto"
+             data-genre="action martial">
+
+            <div class="card-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=600&q=80"
+                    alt="Naruto">
+
+                <div class="play-overlay"
+                     onclick="openVideo('QczGoCmX-pI')">
+
+                    <div class="play-button">
+                        ▶
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="card-content">
+
+                <span class="anime-number">
+                    #08
+                </span>
+
+                <h3>
+                    Naruto
+                </h3>
+
+                <p>
+                    🥷 Action • ⚔️ Martial Arts
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- MY HERO ACADEMIA -->
+
+        <div class="card"
+             data-name="My Hero Academia"
+             data-genre="action school">
+
+            <div class="card-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?auto=format&fit=crop&w=600&q=80"
+                    alt="My Hero Academia">
+
+                <div class="play-overlay"
+                     onclick="openVideo('EPVKCXDhP3E')">
+
+                    <div class="play-button">
+                        ▶
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="card-content">
+
+                <span class="anime-number">
+                    #09
+                </span>
+
+                <h3>
+                    My Hero Academia
+                </h3>
+
+                <p>
+                    🦸 Action • 🏫 School
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- DEATH NOTE -->
+
+        <div class="card"
+             data-name="Death Note"
+             data-genre="horror fantasy">
+
+            <div class="card-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80"
+                    alt="Death Note">
+
+                <div class="play-overlay"
+                     onclick="openVideo('NlJZ-YgAt-c')">
+
+                    <div class="play-button">
+                        ▶
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="card-content">
+
+                <span class="anime-number">
+                    #10
+                </span>
+
+                <h3>
+                    Death Note
+                </h3>
+
+                <p>
+                    👻 Mystery • 🌑 Horror
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     GENRES
+========================================= -->
+
+<section id="genres" class="genres-section">
+
+    <div class="section-heading">
+
+        <span>FIND YOUR VIBE</span>
+
+        <h2>
+            🎭 Anime Genres
+        </h2>
+
+        <p>
+            Choose a genre and discover anime that matches your mood.
         </p>
 
-    </footer>
+    </div>
 
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+    <div class="genre-grid">
+
+
+        <button class="genre-card"
+                onclick="filterGenre('action')">
+
+            <div class="genre-icon">
+                ⚔️
+            </div>
+
+            <div class="genre-info">
+
+                <h3>Action</h3>
+
+                <p>
+                    Epic battles & powerful heroes
+                </p>
+
+            </div>
+
+            <span class="genre-arrow">
+                →
+            </span>
+
+        </button>
+
+
+        <button class="genre-card"
+                onclick="filterGenre('comedy')">
+
+            <div class="genre-icon">
+                😂
+            </div>
+
+            <div class="genre-info">
+
+                <h3>Comedy</h3>
+
+                <p>
+                    Laughs, fun & crazy moments
+                </p>
+
+            </div>
+
+            <span class="genre-arrow">
+                →
+            </span>
+
+        </button>
+
+
+        <button class="genre-card"
+                onclick="filterGenre('romance')">
+
+            <div class="genre-icon">
+                ❤️
+            </div>
+
+            <div class="genre-info">
+
+                <h3>Romance</h3>
+
+                <p>
+                    Love, friendship & emotions
+                </p>
+
+            </div>
+
+            <span class="genre-arrow">
+                →
+            </span>
+
+        </button>
+
+
+        <button class="genre-card"
+                onclick="filterGenre('horror')">
+
+            <div class="genre-icon">
+                👻
+            </div>
+
+            <div class="genre-info">
+
+                <h3>Horror</h3>
+
+                <p>
+                    Dark mysteries & supernatural worlds
+                </p>
+
+            </div>
+
+            <span class="genre-arrow">
+                →
+            </span>
+
+        </button>
+
+
+        <button class="genre-card"
+                onclick="filterGenre('fantasy')">
+
+            <div class="genre-icon">
+                🪄
+            </div>
+
+            <div class="genre-info">
+
+                <h3>Fantasy</h3>
+
+                <p>
+                    Magic, monsters & amazing worlds
+                </p>
+
+            </div>
+
+            <span class="genre-arrow">
+                →
+            </span>
+
+        </button>
+
+
+        <button class="genre-card"
+                onclick="filterGenre('school')">
+
+            <div class="genre-icon">
+                🏫
+            </div>
+
+            <div class="genre-info">
+
+                <h3>School</h3>
+
+                <p>
+                    School life & friendships
+                </p>
+
+            </div>
+
+            <span class="genre-arrow">
+                →
+            </span>
+
+        </button>
+
+
+        <button class="genre-card"
+                onclick="filterGenre('martial')">
+
+            <div class="genre-icon">
+                🥋
+            </div>
+
+            <div class="genre-info">
+
+                <h3>Martial Arts</h3>
+
+                <p>
+                    Fighting techniques & warriors
+                </p>
+
+            </div>
+
+            <span class="genre-arrow">
+                →
+            </span>
+
+        </button>
+
+
+        <button class="genre-card"
+                onclick="showAllAnime()">
+
+            <div class="genre-icon">
+                🌟
+            </div>
+
+            <div class="genre-info">
+
+                <h3>All Anime</h3>
+
+                <p>
+                    Explore the complete collection
+                </p>
+
+            </div>
+
+            <span class="genre-arrow">
+                →
+            </span>
+
+        </button>
+
+    </div>
+
+
+    <div class="genre-message">
+
+        💡 Tip: Select a genre to filter the anime collection.
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     CONTACT
+========================================= -->
+
+<section id="contact" class="contact-section">
+
+    <div class="contact-container">
+
+
+        <!-- CONTACT INFORMATION -->
+
+        <div class="contact-info">
+
+            <span class="contact-small-title">
+                GET IN TOUCH
+            </span>
+
+            <h2>
+                Let's Talk
+                <span>Anime.</span>
+            </h2>
+
+            <p>
+                Have an anime recommendation?
+                Found something awesome?
+                Or simply want to talk about anime?
+                Send us a message!
+            </p>
+
+
+            <div class="contact-details">
+
+
+                <div class="contact-detail">
+
+                    <div class="detail-icon">
+                        📧
+                    </div>
+
+                    <div>
+                        <span>Email</span>
+                        <p>
+                            animexia@example.com
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-detail">
+
+                    <div class="detail-icon">
+                        🌸
+                    </div>
+
+                    <div>
+                        <span>Community</span>
+                        <p>
+                            Anime Lovers
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-detail">
+
+                    <div class="detail-icon">
+                        🚀
+                    </div>
+
+                    <div>
+                        <span>Response</span>
+                        <p>
+                            We love hearing from you!
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CONTACT FORM -->
+
+        <div class="contact-form-card">
+
+            <div class="form-header">
+
+                <div>
+                    <span>MESSAGE US</span>
+
+                    <h3>
+                        Send a Message 💌
+                    </h3>
+                </div>
+
+                <div class="form-emoji">
+                    ✨
+                </div>
+
+            </div>
+
+
+            <form onsubmit="sendMessage(event)">
+
+
+                <div class="input-group">
+
+                    <label for="name">
+                        Your Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                        required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="email">
+                        Your Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="message">
+                        Your Message
+                    </label>
+
+                    <textarea
+                        id="message"
+                        placeholder="Tell us your favorite anime..."
+                        required></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="send-btn">
+
+                    Send Message 🚀
+
+                </button>
+
+
+                <div
+                    id="successMessage"
+                    class="success-message">
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     VIDEO MODAL
+========================================= -->
+
+<div class="modal"
+     id="videoModal">
+
+    <button class="close"
+            onclick="closeVideo()">
+
+        ✕
+
+    </button>
+
+
+    <div class="video-container">
+
+        <iframe
+            id="videoFrame"
+            src=""
+            title="Anime Trailer"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        🌸 Animexia
+    </div>
+
+    <p>
+        Your ultimate destination for anime.
+    </p>
+
+
+    <div class="footer-links">
+
+        <a href="#home">
+            Home
+        </a>
+
+        <a href="#popular">
+            Popular
+        </a>
+
+        <a href="#genres">
+            Genres
+        </a>
+
+        <a href="#contact">
+            Contact
+        </a>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 Animexia.
+        Made with 💖 for anime lovers.
+
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
 
 </body>
-
 </html>
-```
